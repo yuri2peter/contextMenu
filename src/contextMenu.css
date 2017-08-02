@@ -1,0 +1,53 @@
+
+html, body {
+    height: 100%
+}
+
+.yuri2-context-menu {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 150px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border: #CCC 1px solid;
+    display: block;
+    border-radius: 5px;
+    z-index: 99999999;
+}
+
+.yuri2-context-menu ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.yuri2-context-menu ul li {
+    transition: background-color 0.5s;
+    cursor: default;
+    padding: 0px 1em;
+    list-style: none;
+    line-height: 30px;
+    height: 30px;
+    margin: 3px 0;
+    font-size: 13px;
+}
+
+.yuri2-context-menu ul li:hover {
+    background-color: #DDD;
+}
+
+.yuri2-context-menu ul li a {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    color: #333;
+    outline: none;
+}
+
+.yuri2-context-menu ul hr {
+    margin: 0;
+    height: 0;
+    border: 0;
+    border-bottom: rgb(233, 233, 233) 1px solid;
+    border-top: none
+}

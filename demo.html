@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ContextMenu Demo</title>
+    <script src="./src/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="./src/contextMenu.css">
+    <script src="./src/contextMenu.js"></script>
+
+    <style>
+        #div1{background-color: gray;color: white;margin: 20px;width: 200px;height:100px;line-height: 100px;font-size: 20px;padding: 1em}
+    </style>
+    <script>
+        $(function () {
+            $('#div1').setContextMenu([
+                'menu1', //html code
+                'menu2',
+                '|', //delimiter
+                [
+                    'click me', //title
+                    function (e) {alert($(e.data).attr('id'))} // onclick
+                ],
+            ]);
+
+            $('body').setContextMenu(true); //disable default menu
+        })
+    </script>
+
+</head>
+<body>
+    <div id="div1" style=>
+        Hi , I am div1.
+    </div>
+</body>
+</html>
