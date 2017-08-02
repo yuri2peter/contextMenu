@@ -1,11 +1,12 @@
 # contextMenu
-自由定制页面元素的右键菜单。A free  way to customize the context menu.
+A free  way to customize the context menu.自由定制页面元素的右键菜单。
 ![demo](http://ojp71nnay.bkt.clouddn.com/contextMenu-demo.png)
 ## Prepare
 
-1. import jquery
-2. import contextMenu.css
-3. import contextMenu.js
+1. clone and star the repository
+2. import jquery
+3. import contextMenu.css
+4. import contextMenu.js
 
 ## Usage
 

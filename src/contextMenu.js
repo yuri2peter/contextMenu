@@ -1,4 +1,9 @@
-//class name:yuri2-context-menu
+/**
+ * contextMenu v1.0
+ * @author Yuri2(yuri2peter@qq.com)
+ * @link https://github.com/yuri2peter/contextMenu
+ * Enjoy! (●'◡'●)
+ */
 $(function () {
     var ContextMenu={
         setContextMenu:function (jq_dom, menu) {
