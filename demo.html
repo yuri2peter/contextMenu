@@ -11,7 +11,7 @@
     <script src="./src/contextMenu.js"></script>
 
     <style>
-        div.demo{background-color: gray;color: white;margin: 20px;width: 200px;height:100px;line-height: 100px;font-size: 20px;padding: 1em}
+        div.demo{background-color: gray;color: white;margin: 20px;min-width: 200px;min-height:100px;line-height: 100px;font-size: 20px;padding: 1em;border: 3px solid wheat}
     </style>
     <script>
         $(function () {
@@ -30,11 +30,14 @@
 
 </head>
 <body>
-    <div class="demo" id="div1" style=>
+<div class="demo" id="div0">
+    Hi , I am div0.
+    <div class="demo" id="div1">
         Hi , I am div1.
     </div>
-    <div class="demo" id="div2" style=>
-        Hi , I am div2.
-    </div>
+</div>
+<div class="demo" id="div2">
+    Hi , I am div2.
+</div>
 </body>
 </html>
