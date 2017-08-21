@@ -12,9 +12,13 @@
 
     <style>
         div.demo{background-color: gray;color: white;margin: 20px;min-width: 200px;min-height:100px;line-height: 100px;font-size: 20px;padding: 1em;border: 3px solid wheat}
+        div.btn{cursor: pointer;background-color: brown;color: white;line-height: 30px;display: inline-block;padding: 0.5em;border-radius: 0.5em }
     </style>
     <script>
         $(function () {
+            $('div.btn').click(function () {
+                alert('hi');
+            });
             $('div.demo').setContextMenu([
                 'menu1', //html code
                 'menu2',
@@ -32,12 +36,15 @@
 <body>
 <div class="demo" id="div0">
     Hi , I am div0.
+    <div class="btn">click me !</div>
     <div class="demo" id="div1">
         Hi , I am div1.
+        <div class="btn">click me !</div>
     </div>
 </div>
 <div class="demo" id="div2">
     Hi , I am div2.
+    <div class="btn">click me !</div>
 </div>
 </body>
 </html>

@@ -23,27 +23,6 @@ $(function () {
                     e.stopPropagation();
                 }
             });
-            jq_dom.on('touchstart', function(e) {
-                ContextMenu._removeContextMenu();
-                var dom=this;
-                dom.Yuri2ContextMenuPressed=true;
-                if(menu){
-                    setTimeout(function () {
-                        if(dom.Yuri2ContextMenuPressed)
-                            ContextMenu._renderContextMenu(e.originalEvent.changedTouches[0].clientX,e.originalEvent.changedTouches[0].clientY,menu,dom);
-                    },1000);
-                    e.stopPropagation();
-                    if (e.cancelable) {
-                        // 判断默认行为是否已经被禁用
-                        if (!e.defaultPrevented) {
-                            e.preventDefault();
-                        }
-                    }
-                }
-            });
-            jq_dom.on('touchend', function(e) {
-                this.Yuri2ContextMenuPressed=false;
-            });
         },
         _className:'yuri2-context-menu',
         _renderContextMenu:function (x,y,menu,trigger) {
@@ -66,7 +45,6 @@ $(function () {
                     var sub=$('<li>'+item[0]+'</li>');
                     ul.append(sub);
                     sub.click(trigger,item[1]);
-                    sub.on('touchstart',trigger,item[1]);
                     continue;
                 }
             }
@@ -83,9 +61,6 @@ $(function () {
         },
     };
     $(document).click(function () {
-        ContextMenu._removeContextMenu();
-    });
-    $(document).on('touchstart',function () {
         ContextMenu._removeContextMenu();
     });
     $(document).on('contextmenu','.'+ContextMenu._className,function (e) {
