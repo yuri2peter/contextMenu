@@ -19,16 +19,21 @@
             $('div.btn').click(function () {
                 alert('hi');
             });
-            $('div.demo').setContextMenu([
-                'menu1', //html code
-                'menu2',
-                '|', //delimiter
-                [
-                    'click me', //title
-                    function (e) {alert($(e.data).attr('id'))} // onclick
-                ],
-            ]);
-            $('body').setContextMenu(true); //disable default menu
+            $('div.demo').contextmenu(function (e) {
+                var menu=[
+                    'menu1', //html code
+                    'menu2',
+                    '|', //delimiter
+                    [
+                        'click me', //title
+                        function (e) {alert($(e.data).attr('id'))} // onclick
+                    ],
+                ];
+                ContextMenu.render(e,menu,this)
+            });
+            $('body').contextmenu(function (e) {
+                ContextMenu.render(e,true,this)
+            }); //disable default menu
         })
     </script>
 

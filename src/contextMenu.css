@@ -9,16 +9,18 @@ html, body {
     position: fixed;
     width: 150px;
     height: auto;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(61, 61, 61);
     border: #CCC 1px solid;
     display: block;
     border-radius: 5px;
     z-index: 99999999;
+    color: white;
 }
 
 .yuri2-context-menu ul {
     margin: 0px;
     padding: 0px;
+    box-shadow: 0 0 16px #555;
 }
 
 .yuri2-context-menu ul li {
@@ -33,7 +35,7 @@ html, body {
 }
 
 .yuri2-context-menu ul li:hover {
-    background-color: #DDD;
+    background-color: #636363;
 }
 
 .yuri2-context-menu ul li a {
@@ -48,6 +50,6 @@ html, body {
     margin: 0;
     height: 0;
     border: 0;
-    border-bottom: rgb(233, 233, 233) 1px solid;
+    border-bottom: rgb(128, 128, 128) 1px solid;
     border-top: none
 }
