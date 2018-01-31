@@ -1,7 +1,7 @@
 # contextMenu
 自由定制页面元素的右键菜单。
 
-![demo](http://ojp71nnay.bkt.clouddn.com/contextMenu-demo.png)
+![demo](https://github.com/yuri2peter/contextMenu/blob/master/pre.png?raw=true)
 
 > 是的同类的插件很多，作者造轮子是因为当初寻找右键菜单插件的时候，找了几个都有bug，要么经不起环境的考验，只能跑通demo。如果你也在寻找一款右键菜单插件，不如试试这一款，应该不会让你失望。
 
