@@ -13,16 +13,23 @@
     <style>
         div.demo{background-color: gray;color: white;margin: 20px;min-width: 200px;min-height:100px;line-height: 100px;font-size: 20px;padding: 1em;border: 3px solid wheat}
         div.btn{cursor: pointer;background-color: brown;color: white;line-height: 30px;display: inline-block;padding: 0.5em;border-radius: 0.5em }
+        #div2{height: 1000px;width: 200px}
     </style>
     <script>
         $(function () {
             $('div.btn').click(function () {
-                alert('hi');
+                alert($(this).parent().attr('id'));
             });
             $('div.demo').contextmenu(function (e) {
                 var menu=[
                     'menu1', //html code
                     'menu2',
+                    ['subMenu',
+                        [
+                            'sub1',
+                            'sub2',
+                        ]
+                    ],
                     '|', //delimiter
                     [
                         'click me', //title
@@ -33,7 +40,7 @@
             });
             $('body').contextmenu(function (e) {
                 ContextMenu.render(e,true,this)
-            }); //disable default menu
+            });
         })
     </script>
 

@@ -1,6 +1,8 @@
 
 html, body {
-    height: 100%
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .yuri2-context-menu {
@@ -15,8 +17,19 @@ html, body {
     border-radius: 5px;
     z-index: 99999999;
     color: white;
+    /*overflow: hidden;*/
 }
-
+.yuri2-context-menu.sub {
+    left: 98%;
+    position: absolute;
+    display: none;
+}
+.yuri2-context-menu ul li:hover .yuri2-context-menu.sub {
+    display: block;
+}
+.yuri2-context-menu ul.left .yuri2-context-menu.sub{
+    left: -100%;
+}
 .yuri2-context-menu ul {
     margin: 0px;
     padding: 0px;
@@ -30,10 +43,22 @@ html, body {
     list-style: none;
     line-height: 30px;
     height: 30px;
-    margin: 3px 0;
     font-size: 13px;
+    /*overflow: hidden;*/
+    position: relative;
 }
-
+.yuri2-context-menu ul li div.title{
+    width: 80%;
+    overflow: hidden;
+    height: 100%;
+    float: left;
+}
+.yuri2-context-menu ul li.sub:after {
+    content: ">";
+    float: right;
+    transform: scale3d(0.5,1.5,1);
+    position: relative;
+}
 .yuri2-context-menu ul li:hover {
     background-color: #636363;
 }
