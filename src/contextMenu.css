@@ -24,6 +24,10 @@ html, body {
     position: absolute;
     display: none;
 }
+.yuri2-context-menu.sub.left {
+    left: auto;
+    right: 98%;
+}
 .yuri2-context-menu ul li:hover .yuri2-context-menu.sub {
     display: block;
 }

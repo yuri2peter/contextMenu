@@ -1,5 +1,5 @@
 /**
- * contextMenu v2.1
+ * contextMenu v2.1.1
  * @author Yuri2(yuri2peter@qq.com)
  * @link https://github.com/yuri2peter/contextMenu
  * Enjoy! (●'◡'●)
@@ -15,10 +15,10 @@ window.ContextMenu={
                 e.preventDefault();
             }
         }
+        e.stopImmediatePropagation();
         e.stopPropagation();
     },
     render:function (e, menu, trigger) {
-        // return;//TODO for test
         var x=e.clientX,y=e.clientY;
         this._stopProp(e);
         this._removeContextMenu();
@@ -40,6 +40,7 @@ window.ContextMenu={
                 if(typeof(item[1])==='object'){
                     var subMenu=$("<div class='"+ContextMenu._className+" sub'><ul></ul></div>");
                     sub.addClass('sub');
+                    if(x+150>document.body.clientWidth){sub.addClass('left')}
                     sub.append(subMenu);
                     item[1].forEach(function (t) {
                         if(t==='|'){
@@ -48,7 +49,7 @@ window.ContextMenu={
                         else if(typeof(t)==='string'){
                             subMenu.append($('<li><div class="title">'+t+'</div></li>'));
                         }
-                        else if(typeof(item)==='object'){
+                        else if(typeof(t)==='object'){
                             var subLi=$('<li><div class="title">'+t[0]+'</div></li>');
                             subMenu.append(subLi);
                             subLi.click(trigger,t[1]);
