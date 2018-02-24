@@ -1,5 +1,5 @@
 /**
- * contextMenu v2.1.1
+ * contextMenu v2.2.0
  * @author Yuri2(yuri2peter@qq.com)
  * @link https://github.com/yuri2peter/contextMenu
  * Enjoy! (●'◡'●)
@@ -18,13 +18,14 @@ window.ContextMenu={
         e.stopImmediatePropagation();
         e.stopPropagation();
     },
-    render:function (e, menu, trigger) {
+    render:function (e, menu, trigger,theme) {
+        theme||(theme='');
         var x=e.clientX,y=e.clientY;
         this._stopProp(e);
         this._removeContextMenu();
         if(menu===true){return;}
         if(typeof menu === 'object' && menu.length===0){menu=[['...']]}
-        var dom = $("<div class='"+ContextMenu._className+"'><ul></ul></div>");
+        var dom = $("<div class='"+ContextMenu._className+" "+theme+"'><ul></ul></div>");
         $('body').append(dom);
         var ul=dom.find('ul');
         menu.forEach(function (item) {
@@ -38,7 +39,7 @@ window.ContextMenu={
                 var sub=$('<li><div class="title">'+item[0]+'</div></li>');
                 ul.append(sub);
                 if(typeof(item[1])==='object'){
-                    var subMenu=$("<div class='"+ContextMenu._className+" sub'><ul></ul></div>");
+                    var subMenu=$("<div class='sub "+ContextMenu._className+" "+theme+"'><ul></ul></div>");
                     sub.addClass('sub');
                     if(x+150>document.body.clientWidth){sub.addClass('left')}
                     sub.append(subMenu);

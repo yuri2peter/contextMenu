@@ -82,3 +82,8 @@ html, body {
     border-bottom: rgb(128, 128, 128) 1px solid;
     border-top: none
 }
+
+/*浅色主题*/
+.yuri2-context-menu.light {background-color: #e0e0e0;border-color: #535353;color: #333333;}
+.yuri2-context-menu.light ul li:hover {background-color: #707070;color: #ffffff;}
+.yuri2-context-menu.light ul hr{border-color: #535353;}

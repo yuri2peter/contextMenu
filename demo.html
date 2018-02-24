@@ -36,7 +36,7 @@
                         function (e) {alert($(e.data).attr('id'))} // onclick
                     ],
                 ];
-                ContextMenu.render(e,menu,this)
+                ContextMenu.render(e,menu,this,'light')
             });
             $('body').contextmenu(function (e) {
                 ContextMenu.render(e,true,this)
