@@ -1,5 +1,5 @@
 /**
- * contextMenu v2.2.0
+ * contextMenu v2.2.1
  * @author Yuri2(yuri2peter@qq.com)
  * @link https://github.com/yuri2peter/contextMenu
  * Enjoy! (●'◡'●)
@@ -28,6 +28,7 @@ window.ContextMenu={
         var dom = $("<div class='"+ContextMenu._className+" "+theme+"'><ul></ul></div>");
         $('body').append(dom);
         var ul=dom.find('ul');
+        if(x+150>document.body.clientWidth){x-=150;ul.addClass('left')}
         menu.forEach(function (item) {
             if(item==='|'){
                 ul.append($('<hr/>'));
@@ -41,7 +42,7 @@ window.ContextMenu={
                 if(typeof(item[1])==='object'){
                     var subMenu=$("<div class='sub "+ContextMenu._className+" "+theme+"'><ul></ul></div>");
                     sub.addClass('sub');
-                    if(x+150>document.body.clientWidth){sub.addClass('left')}
+                    if(x+300>document.body.clientWidth){subMenu.addClass('left')}
                     sub.append(subMenu);
                     item[1].forEach(function (t) {
                         if(t==='|'){
@@ -65,7 +66,6 @@ window.ContextMenu={
             }
         });
         //修正坐标
-        if(x+150>document.body.clientWidth){x-=150;ul.addClass('left')}
         if(y+dom.height()>document.body.clientHeight && document.body.clientHeight>0){y-=dom.height()}
         dom.css({
             top:y,
