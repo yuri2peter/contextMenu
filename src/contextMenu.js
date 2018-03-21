@@ -1,5 +1,5 @@
 /**
- * contextMenu v2.2.1
+ * contextMenu v2.2.2
  * @author Yuri2(yuri2peter@qq.com)
  * @link https://github.com/yuri2peter/contextMenu
  * Enjoy! (●'◡'●)
@@ -37,7 +37,7 @@ window.ContextMenu={
                 ul.append($('<li><div class="title">'+item+'</div></li>'));
             }
             else if(typeof(item)==='object'){
-                var sub=$('<li><div class="title">'+item[0]+'</div></li>');
+                var sub=$('<li><div class="title '+(item[2]===true?'disable':'')+'">'+item[0]+'</div></li>');
                 ul.append(sub);
                 if(typeof(item[1])==='object'){
                     var subMenu=$("<div class='sub "+ContextMenu._className+" "+theme+"'><ul></ul></div>");
@@ -52,14 +52,16 @@ window.ContextMenu={
                             subMenu.append($('<li><div class="title">'+t+'</div></li>'));
                         }
                         else if(typeof(t)==='object'){
-                            var subLi=$('<li><div class="title">'+t[0]+'</div></li>');
+                            var subLi=$('<li><div class="title '+(t[2]===true?'disable':'')+'">'+t[0]+'</div></li>');
                             subMenu.append(subLi);
-                            subLi.click(trigger,t[1]);
-                            subLi.click(function () {ContextMenu._removeContextMenu();});
+                            if(t[2]!==true){
+                                subLi.click(trigger,t[1]);
+                                subLi.click(function () {ContextMenu._removeContextMenu();});
+                            }
                         }
                     })
                 }
-                else if(typeof(item[1])==='function'){
+                else if(typeof(item[1])==='function' &&item[2]!==true){
                     sub.click(trigger,item[1]);
                     sub.click(function () {ContextMenu._removeContextMenu();});
                 }

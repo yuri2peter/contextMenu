@@ -47,7 +47,7 @@ html, body {
     list-style: none;
     line-height: 30px;
     height: 30px;
-    font-size: 13px;
+    font-size: 10px;
     /*overflow: hidden;*/
     position: relative;
 }
@@ -56,6 +56,9 @@ html, body {
     overflow: hidden;
     height: 100%;
     float: left;
+}
+.yuri2-context-menu ul li div.title.disable {
+    color: darkgrey;
 }
 .yuri2-context-menu ul li.sub:after {
     content: ">";
