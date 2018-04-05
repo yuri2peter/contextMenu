@@ -12,9 +12,8 @@ html, body {
     width: 150px;
     height: auto;
     background-color: rgb(61, 61, 61);
-    border: #CCC 1px solid;
     display: block;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     z-index: 99999999;
     color: white;
     /*overflow: hidden;*/
@@ -82,7 +81,7 @@ html, body {
     margin: 0;
     height: 0;
     border: 0;
-    border-bottom: rgb(128, 128, 128) 1px solid;
+    border-bottom: rgba(132, 132, 132, 0.47) 1px solid;
     border-top: none
 }
 

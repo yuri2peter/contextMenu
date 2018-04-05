@@ -40,20 +40,22 @@ window.ContextMenu={
                 var sub=$('<li><div class="title '+(item[2]===true?'disable':'')+'">'+item[0]+'</div></li>');
                 ul.append(sub);
                 if(typeof(item[1])==='object'){
-                    var subMenu=$("<div class='sub "+ContextMenu._className+" "+theme+"'><ul></ul></div>");
+                    var subMenu=$("<div class='sub "+ContextMenu._className+" "+theme+"'>\</div>");
+                    var subUl=$("<ul></ul>");
                     sub.addClass('sub');
+                    subMenu.append(subUl);
                     if(x+300>document.body.clientWidth){subMenu.addClass('left')}
                     sub.append(subMenu);
                     item[1].forEach(function (t) {
                         if(t==='|'){
-                            subMenu.append($('<hr/>'));
+                            subUl.append($('<hr/>'));
                         }
                         else if(typeof(t)==='string'){
-                            subMenu.append($('<li><div class="title">'+t+'</div></li>'));
+                            subUl.append($('<li><div class="title">'+t+'</div></li>'));
                         }
                         else if(typeof(t)==='object'){
                             var subLi=$('<li><div class="title '+(t[2]===true?'disable':'')+'">'+t[0]+'</div></li>');
-                            subMenu.append(subLi);
+                            subUl.append(subLi);
                             if(t[2]!==true){
                                 subLi.click(trigger,t[1]);
                                 subLi.click(function () {ContextMenu._removeContextMenu();});
